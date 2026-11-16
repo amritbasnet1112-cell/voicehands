@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VH Mixed Page</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  button { position: absolute; width: 150px; height: 60px; font-size: 22px; }
+  .sq { position: absolute; width: 110px; height: 110px; border-radius: 12px; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1 style="position:absolute; left:60px; top:30px">VoiceHands mixed page</h1>
+<button style="left:80px; top:240px" onclick="hit('alpha')">Alpha</button>
+<button style="left:300px; top:240px" onclick="hit('beta')">Beta</button>
+<button style="left:520px; top:240px" onclick="hit('gamma')">Gamma</button>
+<div class="sq" style="left:100px; top:420px; background:#e53935" onclick="hit('red')"></div>
+<div class="sq" style="left:320px; top:420px; background:#43a047" onclick="hit('green')"></div>
+<div class="sq" style="left:540px; top:420px; background:#1e88e5" onclick="hit('blue')"></div>
+<script>function hit(w) { document.title = 'CLICKED:' + w; }</script>
+</body>
+</html>

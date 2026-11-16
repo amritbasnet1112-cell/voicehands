@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VH Test Page</title>
+<style>
+  body { font-family: sans-serif; padding: 40px; }
+  input, button { font-size: 20px; padding: 8px; margin: 8px 0; }
+</style>
+</head>
+<body>
+<h1>VoiceHands test form</h1>
+<label for="name">Your name</label><br>
+<input id="name" type="text" placeholder="Type your name here"><br>
+<button id="go" onclick="submitForm()">Submit</button>
+<p id="out"></p>
+<script>
+function submitForm() {
+  var v = document.getElementById('name').value;
+  document.getElementById('out').textContent = 'Hello ' + v;
+  document.title = 'SUBMITTED:' + v;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VH Hard Page 2</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  .sq { position: absolute; width: 110px; height: 110px; border-radius: 12px; cursor: pointer; }
+  canvas { position: absolute; left: 800px; top: 420px; border: 2px solid #888; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1 style="position:absolute; left:60px; top:30px">VoiceHands hard page 2</h1>
+<div class="sq" style="left:640px; top:260px; background:#e53935" onclick="hit('red')"></div>
+<div class="sq" style="left:120px; top:330px; background:#43a047" onclick="hit('green')"></div>
+<div class="sq" style="left:380px; top:480px; background:#1e88e5" onclick="hit('blue')"></div>
+<canvas id="c" width="320" height="200" onclick="hit('canvas')"></canvas>
+<script>
+function hit(what) { document.title = 'CLICKED:' + what; }
+var ctx = document.getElementById('c').getContext('2d');
+ctx.fillStyle = '#fdd835';
+ctx.beginPath(); ctx.arc(160, 100, 70, 0, 6.283); ctx.fill();
+</script>
+</body>
+</html>

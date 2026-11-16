@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VH Hard Page</title>
+<style>
+  body { font-family: sans-serif; padding: 40px; }
+  .row { display: flex; gap: 24px; margin: 24px 0; }
+  .sq { width: 110px; height: 110px; border-radius: 12px; cursor: pointer; }
+  canvas { border: 2px solid #888; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>VoiceHands hard page</h1>
+<p>Squares and a canvas. None of them has a text label.</p>
+<div class="row">
+  <div class="sq" style="background:#e53935" onclick="hit('red')"></div>
+  <div class="sq" style="background:#43a047" onclick="hit('green')"></div>
+  <div class="sq" style="background:#1e88e5" onclick="hit('blue')"></div>
+</div>
+<canvas id="c" width="360" height="160" onclick="hit('canvas')"></canvas>
+<script>
+function hit(what) { document.title = 'CLICKED:' + what; }
+var ctx = document.getElementById('c').getContext('2d');
+ctx.fillStyle = '#fdd835';
+ctx.beginPath(); ctx.arc(180, 80, 60, 0, 6.283); ctx.fill();
+</script>
+</body>
+</html>

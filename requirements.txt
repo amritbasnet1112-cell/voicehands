@@ -1,0 +1,8 @@
+ollama
+pywinauto
+pyautogui
+pyperclip
+pillow
+numpy
+sounddevice
+faster-whisper
