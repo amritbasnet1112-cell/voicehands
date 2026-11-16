@@ -50,3 +50,43 @@ How to read the table: Tasks is the number of distinct tasks, Runs is tasks time
 - Synthetic test pages; the planner prompt was written around Notepad.
 - The 3B planner was not run on the Edge form page.
 - The vision runner does single clicks, not a multi-step loop yet.
+
+## How to run
+
+Needs Windows 11 (the Notepad tests use its tabbed Notepad), Python 3.12, Microsoft Edge, [Ollama](https://ollama.com) and, for the voice part, a microphone. I have only run this on one machine and have not tested a fresh clone.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+ollama pull qwen2.5:3b
+ollama pull qwen2.5:7b
+ollama pull qwen2.5vl:7b
+```
+
+**The benchmarks control your real mouse and keyboard.** Don't touch either during a run. Moving the mouse into a screen corner stops everything. Each Notepad test uses its own file (`logs/bench_scratch.txt`) and each Edge test opens its own window. Close old test windows before a run, and don't keep unsaved work in Notepad.
+
+Reproduce results (use your own tag so your runs stay separate from mine):
+
+```powershell
+$env:VH_AUTO="1"          # don't pause on "risky action" prompts
+$env:VH_TAG="mine1"       # your label for this run
+$env:VH_MODEL="qwen2.5:7b"
+python benchmark\run_bench.py 1            # Notepad: UIA tree + LLM planner
+python benchmark\run_browser.py 1          # Edge form page: UIA tree + LLM planner
+python benchmark\run_hard.py 1             # unlabeled shapes: UIA tree + LLM planner
+python benchmark\run_vision.py 1           # same page, screenshot only (qwen2.5vl:7b)
+python benchmark\run_mixed.py hybrid 2     # modes: uia | vision | hybrid
+python benchmark\run_dup2.py safe 2 b      # modes: uia | vision | hybrid | safe; pages: a | b
+python benchmark\report.py mine1           # summary and task matrix for your tag
+```
+
+On my laptop a planner task took 1 to 8 minutes and a vision call took tens of seconds.
+
+Voice control (not part of the benchmark):
+
+```powershell
+python voice_main.py
+```
+
+Press Enter, say a command, press Enter. It shows what it heard and asks y/n before acting. It then drives the first Notepad window it finds, so open a blank Notepad tab first. The first run downloads the Whisper `medium` model (over 1 GB). What it hears is saved to `logs/asr.jsonl`, which is not committed.
