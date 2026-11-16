@@ -53,7 +53,7 @@ How to read the table: Tasks is the number of distinct tasks, Runs is tasks time
 
 ## How to run
 
-Needs Windows 11 (the Notepad tests use its tabbed Notepad), Python 3.12, Microsoft Edge, [Ollama](https://ollama.com) and, for the voice part, a microphone. I have only run this on one machine and have not tested a fresh clone.
+Needs Windows 11 (the Notepad tests use its tabbed Notepad), Python 3.12, Microsoft Edge, [Ollama](https://ollama.com) and, for the voice part, a microphone. I have only run this on one machine. I tested one fresh clone there: the install, the imports and `benchmark\report.py v5` (which reproduces the table row) work. I did not re-run the mouse-controlling benchmarks or the voice part from a clean clone. `requirements.txt` is pinned to the versions my results came from: a first install with unpinned requirements got newer numpy and onnxruntime releases, and Windows Application Control blocked numpy's DLL. The pinned versions loaded fine, which suggests but does not prove that the versions were the cause.
 
 ```powershell
 python -m venv .venv
