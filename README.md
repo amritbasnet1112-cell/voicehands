@@ -1,10 +1,17 @@
 # VoiceHands
 
-A local, bilingual (English / Japanese) voice-controlled Windows agent, plus a reproducible benchmark comparing three ways of grounding GUI clicks: the accessibility (UI Automation) tree, a vision model reading a screenshot, and a hybrid of the two—integrated into an end-to-end LLM planner loop with a spoken safety gate.
+A local, bilingual (English / Japanese) voice-controlled Windows agent, plus a reproducible benchmark comparing
+three ways of grounding GUI clicks: the accessibility (UI Automation) tree, a vision model reading a screenshot,
+and a hybrid of the two-integrated into an end-to-end LLM planner loop with a spoken safety gate.
 
-Everything runs locally on one Windows laptop: `faster-whisper` (speech), Ollama (`qwen2.5:3b`, `qwen2.5:7b`, and `qwen2.5vl:7b`), and `pywinauto` / `pyautogui` (observe and act).
+Everything runs locally on one Windows laptop: `faster-whisper` (speech), Ollama (`qwen2.5:3b`, `qwen2.5:7b`, and
+`qwen2.5vl:7b`), and `pywinauto` / `pyautogui` (observe and act).
 
 For a concise, paper-style summary of the architecture, results, and failure taxonomy, see [REPORT.md](REPORT.md).
+
+## Demo (sped up to skip local CPU inference wait)
+
+https://github.com/user-attachments/assets/992adae4-d6d3-4eb9-999a-41129a798fab
 
 ## GUI Grounding & Planner Results
 
