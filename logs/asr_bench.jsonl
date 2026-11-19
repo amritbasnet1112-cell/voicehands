@@ -1,0 +1,26 @@
+{"tag": "asr1", "id": "en1", "lang": "en", "detected": "es", "lang_ok": false, "ref": "Click the Alpha button", "hyp": "クリックをお待ちください。", "metric": "WER", "error_rate": 1.0, "seconds": 46.5}
+{"tag": "asr1", "id": "en2", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the red square", "hyp": "クリック ドア レディー スクワット。", "metric": "WER", "error_rate": 1.0, "seconds": 36.7}
+{"tag": "asr1", "id": "en3", "lang": "en", "detected": "tl", "lang_ok": false, "ref": "Click the text area and type hello world", "hyp": "Click the text area and type hello world.", "metric": "WER", "error_rate": 0.0, "seconds": 43.8}
+{"tag": "asr1", "id": "en4", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Press control S to save", "hyp": "Press Control S to save.", "metric": "WER", "error_rate": 0.0, "seconds": 34.2}
+{"tag": "asr1", "id": "en5", "lang": "en", "detected": "pt", "lang_ok": false, "ref": "Yes, proceed", "hyp": "Yes. Próximo.", "metric": "WER", "error_rate": 0.5, "seconds": 21.5}
+{"tag": "asr1", "id": "ja1", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "テキストエリアをクリックしてこんにちはと入力して", "hyp": "テキストエリアをクリックして こんにちはと入力して。", "metric": "CER", "error_rate": 0.0, "seconds": 44.0}
+{"tag": "asr1", "id": "ja2", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "赤い四角をクリックして", "hyp": "赤い四角をクリックして。", "metric": "CER", "error_rate": 0.0, "seconds": 61.7}
+{"tag": "asr1", "id": "ja3", "lang": "ja", "detected": "tl", "lang_ok": false, "ref": "保存ボタンを押して", "hyp": "モドゥンボタンを押して。", "metric": "CER", "error_rate": 0.444, "seconds": 39.9}
+{"tag": "asr1", "id": "ja4", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "はい、実行して", "hyp": "はい。実行して。", "metric": "CER", "error_rate": 0.0, "seconds": 24.4}
+{"tag": "asr1", "id": "ja5", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "いいえ、キャンセルして", "hyp": "いいえ。キャンセルして。", "metric": "CER", "error_rate": 0.0, "seconds": 21.4}
+{"tag": "asr2", "id": "en1", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the Alpha button", "hyp": "Click the alpha button.", "metric": "WER", "error_rate": 0.0, "seconds": 15.6}
+{"tag": "asr2", "id": "en2", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the red square", "hyp": "Click the red square.", "metric": "WER", "error_rate": 0.0, "seconds": 18.5}
+{"tag": "asr2", "id": "en3", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the text area and type hello world", "hyp": "Click the text area and type hello old.", "metric": "WER", "error_rate": 0.125, "seconds": 22.6}
+{"tag": "asr2", "id": "en4", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Press control S to save", "hyp": "Press control S to save.", "metric": "WER", "error_rate": 0.0, "seconds": 18.1}
+{"tag": "asr2", "id": "en5", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Yes, proceed", "hyp": "Yes, proceed.", "metric": "WER", "error_rate": 0.0, "seconds": 8.2}
+{"tag": "asr2", "id": "ja1", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "テキストエリアをクリックしてこんにちはと入力して", "hyp": "テキストエリアをクリックして。こんにちはと入力して。", "metric": "CER", "error_rate": 0.0, "seconds": 18.8}
+{"tag": "asr2", "id": "ja2", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "赤い四角をクリックして", "hyp": "赤い四角をクリックして。", "metric": "CER", "error_rate": 0.0, "seconds": 17.4}
+{"tag": "asr2", "id": "ja3", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "保存ボタンを押して", "hyp": "保存ボタンを押して。", "metric": "CER", "error_rate": 0.0, "seconds": 13.6}
+{"tag": "asr2", "id": "ja4", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "はい、実行して", "hyp": "はい、実行して。", "metric": "CER", "error_rate": 0.0, "seconds": 9.2}
+{"tag": "asr2", "id": "ja5", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "いいえ、キャンセルして", "hyp": "いいえ、キャンセルして。", "metric": "CER", "error_rate": 0.0, "seconds": 9.0}
+{"tag": "asr3", "id": "uen1", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the Filter button", "hyp": "Click the filter button.", "metric": "WER", "error_rate": 0.0, "seconds": 14.5}
+{"tag": "asr3", "id": "uen2", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Click the orange circle", "hyp": "click the orange circle", "metric": "WER", "error_rate": 0.0, "seconds": 10.3}
+{"tag": "asr3", "id": "uen3", "lang": "en", "detected": "en", "lang_ok": true, "ref": "Open the settings menu", "hyp": "Open the settings menu.", "metric": "WER", "error_rate": 0.0, "seconds": 10.5}
+{"tag": "asr3", "id": "uja1", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "青い丸をクリックして", "hyp": "青い丸をクリックして。", "metric": "CER", "error_rate": 0.0, "seconds": 15.2}
+{"tag": "asr3", "id": "uja2", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "詳細ボタンを押して", "hyp": "消災ボタンを押して", "metric": "CER", "error_rate": 0.222, "seconds": 48.6}
+{"tag": "asr3", "id": "uja3", "lang": "ja", "detected": "ja", "lang_ok": true, "ref": "はい、お願いします", "hyp": "はい、お願いします。", "metric": "CER", "error_rate": 0.0, "seconds": 9.4}

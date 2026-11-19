@@ -1,6 +1,8 @@
 from pywinauto import Desktop
 import json, time, sys, os
 
+CHROME_FRAC = 0.17   # top part of an Edge window: tabs, address bar, bookmarks, extensions
+
 def observe(max_items=None, title_re=None):
     if max_items is None:
         max_items = int(os.environ.get("VH_MAX_ITEMS", "25"))
@@ -10,12 +12,19 @@ def observe(max_items=None, title_re=None):
         time.sleep(0.6)
     else:
         win = Desktop(backend="uia").window(active_only=True)
+
+    wr = win.rectangle()
+    is_browser = win.window_text().rstrip().endswith("Edge")
+    limit = wr.top + CHROME_FRAC * (wr.bottom - wr.top) if is_browser else None
+
     items = []
     for i, el in enumerate(win.descendants()):
         try:
             info = el.element_info
             if (info.name or info.control_type in ("Edit", "Document")) and el.is_visible():
                 r = el.rectangle()
+                if limit is not None and (r.top + r.bottom) / 2 < limit:
+                    continue   # browser toolbar, address bar, bookmarks, extensions
                 items.append({
                     "id": i,
                     "role": info.control_type,

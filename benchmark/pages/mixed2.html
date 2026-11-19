@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VH Unseen Page</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  .dot { position: absolute; width: 110px; height: 110px; border-radius: 50%; cursor: pointer; }
+  button { position: absolute; width: 150px; height: 60px; font-size: 22px; }
+</style>
+</head>
+<body>
+<h1 style="position:absolute; left:60px; top:30px">VoiceHands unseen page</h1>
+<div class="dot" style="left:140px; top:200px; background:#fb8c00" onclick="hit('orange')"></div>
+<div class="dot" style="left:380px; top:200px; background:#8e24aa" onclick="hit('purple')"></div>
+<div class="dot" style="left:620px; top:200px; background:#fdd835; border:2px solid #f57f17" onclick="hit('yellow')"></div>
+<button style="left:120px; top:410px" onclick="hit('filter')">Filter</button>
+<button style="left:360px; top:410px" onclick="hit('details')">Details</button>
+<button style="left:600px; top:410px" onclick="hit('refresh')">Refresh</button>
+<script>function hit(w) { document.title = 'CLICKED:' + w; }</script>
+</body>
+</html>

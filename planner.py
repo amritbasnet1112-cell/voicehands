@@ -6,10 +6,12 @@ PLANNER = os.environ.get("VH_MODEL", "qwen2.5:7b")
 
 SYSTEM = """You control a Windows PC. You get a goal, a numbered list of UI elements,
 the actions already taken, and a hint. Reply with ONE JSON object only:
-{"action":"click|type|hotkey|press|scroll|done","id":int,"text":str,"keys":[str],"risky":bool}
+{"action":"click|click_desc|type|hotkey|press|scroll|done","id":int,"text":str,"keys":[str],"risky":bool}
 
 Rules:
 - click needs "id" from the list. type needs "text".
+- If the element you need is in the list with a clear name, use click with its id.
+- click_desc needs "text": a short description of the target, like "the star icon". Use click_desc when the element you need is NOT in the list (for example an unlabeled shape, icon or image), or when several listed elements share the same name.
 - hotkey needs "keys" with a combination, e.g. ["ctrl","a"].
 - press needs "keys" with exactly ONE key, e.g. ["enter"] or ["delete"].
 - Typing goes into the focused element, so click the text area first, then type.
@@ -27,7 +29,15 @@ Example for the goal "Click the text area, press the end key, then type ok":
 Actions so far: []  -> {"action":"click","id":1,"text":"","keys":[],"risky":false}
 Actions so far: [click id 1]  -> {"action":"press","id":1,"text":"","keys":["end"],"risky":false}
 Actions so far: [click id 1, press end]  -> {"action":"type","id":1,"text":"ok","keys":[],"risky":false}
-Actions so far: [click id 1, press end, type "ok"]  -> {"action":"done"}"""
+Actions so far: [click id 1, press end, type "ok"]  -> {"action":"done"}
+
+Example for the goal "Click the Save button" when element 12 is named "Save":
+Actions so far: []  -> {"action":"click","id":12,"text":"","keys":[],"risky":false}
+Actions so far: [click id 12 "Save"]  -> {"action":"done"}
+
+Example for the goal "Click the star icon" when no element in the list is named like a star:
+Actions so far: []  -> {"action":"click_desc","id":0,"text":"the star icon","keys":[],"risky":false}
+Actions so far: [click_desc "the star icon"]  -> {"action":"done"}"""
 
 def plan(goal, items, history):
     done = [h for h in history if "error" not in h]
